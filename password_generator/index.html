@@ -31,10 +31,12 @@
         let password = ""
     
         for(let i = 0; i < 8; i++) {
-            const randomNumber = Math.flor(Math.random() * chars.
-            length)
+            const randomNumber = Math.floor(Math.random() * chars.length)
             password += chars.substring(randomNumber, randomNumber + 1)
         }
+
+        const inputE1 = document.querySelector("#password")
+        inputE1.value = password
 
         console.log(password)
     }
