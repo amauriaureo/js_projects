@@ -26,6 +26,8 @@
     <script>
         const inputE1 = document.querySelector("#password")
         let passwordLength = 16
+
+        // function to generate password
         function generatePassword() {
             const chars = 
             "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789!@#$%¨'&*(){}[]^Ç?~;.><,"
@@ -36,21 +38,21 @@
                 const randomNumber = Math.floor(Math.random() * chars.length)
                 password += chars.substring(randomNumber, randomNumber + 1)
             }
-
+        // Input password from line 13
+            // const inputE1 = document.querySelector("#password") #this function went to line 27
             inputE1.value = password
         }
-
+        // Copping password
         function copy() {
             navigator.clipboard.writeText(inputE1.value)
         }
-    // 
+        // Adding range
         const passwordLengthE1 = document.querySelector('#password-length')
         passwordLengthE1.addEventListener("input", function() {
             passwordLength = passwordLengthE1.value
-            console.log(passwordLength)
             generatePassword()
         })
-
+        // Insert the event in the copy password button
         const copyButtonE1 = document.querySelector("#copy")
         copyButtonE1.addEventListener("click", copy)
 
